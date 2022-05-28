@@ -37,6 +37,10 @@ class Venue(db.Model):
     def upcoming_shows_count(self):
         return len(self.upcoming_shows)
 
+    @property
+    def num_upcoming_shows(self):
+        return self.upcoming_shows_count
+
 
 class Artist(db.Model):
     __tablename__ = 'Artist'
@@ -69,6 +73,10 @@ class Artist(db.Model):
     @property
     def upcoming_shows_count(self):
         return len(self.upcoming_shows)
+
+    @property
+    def num_upcoming_shows(self):
+        return self.upcoming_shows_count
 
 
 class Show(db.Model):
